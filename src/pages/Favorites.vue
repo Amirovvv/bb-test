@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>warehouse</div>
+  <div>Favorites</div>
 </template>
 
 <style scoped></style>

@@ -1,7 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import defaultLayout from '@/layouts/default.vue'
+</script>
 
-<template>
-  <RouterView />
-</template>
+<template><defaultLayout /></template>
 
 <style scoped></style>

@@ -4,6 +4,15 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [vue()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "./src/styles/variables.scss";
+        `,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

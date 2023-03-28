@@ -3,8 +3,18 @@ import { createRouter, createWebHistory ,RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'Warehouse',
-    component: () => import('@/pages/Warehouse.vue'),
+    name: 'Warehouses',
+    component: () => import('@/pages/Warehouses.vue'),
+  },
+  {
+    path: '/favorites',
+    name: 'Favorites',
+    component: () => import('@/pages/Favorites.vue'),
+  },
+  {
+    path: '/deals',
+    name: 'Deals',
+    component: () => import('@/pages/Deals.vue'),
   },
 ]
 
