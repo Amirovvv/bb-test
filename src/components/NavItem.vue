@@ -32,6 +32,7 @@ const props = defineProps({
   font-weight: 500;
   font-size: 13px;
   border-radius: 10px;
+  color: $primary;
 }
 
 .active-link {

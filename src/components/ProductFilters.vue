@@ -34,8 +34,6 @@ const activeFilter: Ref<string> = ref('')
 const searchQuery: Ref<string> = ref('')
 const routeName: RouteRecordName = (route.name as string) || ''
 
-// const storage = new LocalStorageService('activeFilter')
-
 const activatedFilter = (param: string): void => {
   store.changeLoading()
   emits('activeFilter', param)
@@ -52,13 +50,8 @@ watch(
 )
 
 onMounted(() => {
-  // if (storage.getData()) {
-  //   activeFilter.value = storage.getData<{ [key: string]: any }>()[
-  //     route.name as string
-  //   ]
-  //   console.log(storage.getData())
-  // }
   activeFilter.value = localStorage.getItem(routeName) || ''
+  activatedFilter(activeFilter.value)
 })
 </script>
 
