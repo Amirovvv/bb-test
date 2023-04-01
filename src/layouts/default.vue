@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import Navbar from '@/components/TheNavbar.vue'
+import { useProductStore } from '@/stores/products.store'
+import { onMounted } from 'vue'
+
+const store = useProductStore()
+
+onMounted(() => {
+  store.getLocalData()
+})
 </script>
 
 <template>

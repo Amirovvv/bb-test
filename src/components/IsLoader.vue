@@ -1,10 +1,3 @@
-<template>
-  <div class="loader-container" v-if="isLoading">
-    <div class="loader"></div>
-  </div>
-  <slot v-else></slot>
-</template>
-
 <script lang="ts" setup>
 const props = defineProps({
   isLoading: {
@@ -13,6 +6,13 @@ const props = defineProps({
   },
 })
 </script>
+
+<template>
+  <div class="loader-container" v-if="isLoading">
+    <div class="loader"></div>
+  </div>
+  <slot v-else></slot>
+</template>
 
 <style scoped>
 .loader-container {

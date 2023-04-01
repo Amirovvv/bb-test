@@ -11,12 +11,12 @@ const props = defineProps({
 </script>
 
 <template>
-  <RouterLink :to="{ name: props.navItem.url }" v-slot="{ isActive }">
+  <RouterLink :to="{ name: navItem.url }" v-slot="{ isActive }">
     <div class="nav-item" :class="isActive ? 'active-link' : ''">
       <div class="nav-item__icon">
-        <Component :is="props.navItem.icon" />
+        <Component :is="navItem.icon" />
       </div>
-      <div>{{ props.navItem.title }}</div>
+      <div>{{ navItem.title }}</div>
     </div>
   </RouterLink>
 </template>
@@ -35,6 +35,6 @@ const props = defineProps({
 }
 
 .active-link {
-  background: $gray;
+  background: $white-gray;
 }
 </style>

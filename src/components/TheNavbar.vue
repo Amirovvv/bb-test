@@ -33,4 +33,15 @@ const navListData: NavItemType[] = [
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    justify-content: center;
+  }
+}
+</style>

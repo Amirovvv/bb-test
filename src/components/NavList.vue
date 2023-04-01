@@ -20,6 +20,5 @@ const props = defineProps({
 <style scoped>
 .nav-list {
   display: flex;
-  justify-content: flex-end;
 }
 </style>

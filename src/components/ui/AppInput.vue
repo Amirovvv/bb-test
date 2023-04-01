@@ -14,12 +14,24 @@ const props: inputPropsType = defineProps({
     type: String,
     default: 'text',
   },
+  modelValue: [String, Number],
 })
+
+const emits = defineEmits(['update:modelValue'])
+
+const updateInput = (event: Event) => {
+  emits('update:modelValue', (event.target as HTMLInputElement).value)
+}
 </script>
 
 <template>
   <div class="app-input">
-    <input :type="props.btnType" :placeholder="props.btnPlaceholder" />
+    <input
+      :type="props.btnType"
+      :placeholder="props.btnPlaceholder"
+      :value="modelValue"
+      @input="updateInput"
+    />
     <div v-if="props.btnIcon" class="app-input__icon">
       <slot name="icon"></slot>
     </div>
@@ -33,17 +45,19 @@ const props: inputPropsType = defineProps({
   align-items: center;
   padding: 4px 4px 4px 20px;
   border-radius: 10px;
-  border: 1px solid $gray-dark;
+  border: 1px solid $platinum;
+  justify-content: space-between;
+
   & input {
     border: none;
     font-size: 15px;
-    color: $blue-dark;
+    color: $primary;
   }
 
   &__icon {
     width: 40px;
     height: 40px;
-    background: $blue-dark;
+    background: $primary;
     border-radius: 10px;
     display: flex;
     align-items: center;
